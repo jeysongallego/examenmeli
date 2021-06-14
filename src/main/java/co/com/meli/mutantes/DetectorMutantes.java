@@ -7,12 +7,18 @@ import java.util.*;
  */
 public class DetectorMutantes {
 
-
   private static final char LETRA_A = 'A';
   private static final char LETRA_T = 'T';
   private static final char LETRA_C = 'C';
   private static final char LETRA_G = 'G';
 
+  /**
+   * Evalua una secuencia de ADN y verifica si pertenece a un mutante.
+   *
+   * @param dna Array que representa la cadena de ADN conformada por una matrizde NxN
+   * @return true si es mutante, false en caso contrario
+   * @throws ADNException Si hay errores en la secuencia de ADN.
+   */
   public static boolean isMutant(String[] dna) throws ADNException {
     List<String> matrizADN = Arrays.asList(dna);
     int tamanoMatriz = matrizADN.size();

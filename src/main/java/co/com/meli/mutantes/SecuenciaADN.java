@@ -5,14 +5,14 @@ import java.util.Stack;
 public class SecuenciaADN {
 
   /* Es la secuencia original que se va armando*/
-  private Stack<Character> secuencia;
+  private final Stack<Character> secuencia;
 
   /* Es la secuencia solo de letras iguales */
-  private Stack<Character> secuenciaContinua;
+  private final Stack<Character> secuenciaContinua;
 
   public SecuenciaADN() {
-    this.secuencia = new Stack();
-    this.secuenciaContinua = new Stack();
+    this.secuencia = new Stack<>();
+    this.secuenciaContinua = new Stack<>();
   }
 
   /**

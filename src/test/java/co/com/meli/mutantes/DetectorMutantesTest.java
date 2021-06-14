@@ -30,31 +30,31 @@ public class DetectorMutantesTest {
   }
 
   @Test
-  public void test03_Mutante_DosSecuenciaVeticales() throws ADNException {
-    String[] dna = {"GTACG", "CGATG", "TTATG", "AGATG", "CAATG"};
+  public void test04_Mutante_DosSecuenciaVeticales() throws ADNException {
+    String[] dna = {"GTACG", "CGATG", "TTATG", "AGATG", "CAATC"};
     Assertions.assertTrue(DetectorMutantes.isMutant(dna));
   }
 
   @Test
-  public void test04_NoMutante_matrizPequena() throws ADNException {
+  public void test05_NoMutante_matrizPequena() throws ADNException {
     String[] dna = {"GGG", "GGG", "GGG"};
     Assertions.assertFalse(DetectorMutantes.isMutant(dna));
   }
 
   @Test
-  public void test05_Mutante_DosSecuenciaHorizontales() throws ADNException {
+  public void test06_Mutante_DosSecuenciaHorizontales() throws ADNException {
     String[] dna = {"GTACG", "CGGGG", "GGGGC", "AGATG", "CAATG"};
     Assertions.assertTrue(DetectorMutantes.isMutant(dna));
   }
 
   @Test
-  public void test06_Mutante_UnaVerticalUnaHorizontal() throws ADNException {
+  public void test07_Mutante_UnaVerticalUnaHorizontal() throws ADNException {
     String[] dna = {"GTACA", "CGGGG", "ACCAG", "ACTTG", "CAATG"};
     Assertions.assertTrue(DetectorMutantes.isMutant(dna));
   }
 
   @Test
-  public void test06_Error_LetraMalaFinal() {
+  public void test08_Error_LetraMalaFinal() {
     String[] dna = {"GTACAG", "CGGGGT", "ACCAGA", "ACTTGC", "CAATGA", "CAATGK"};
     ADNException exception = Assertions.assertThrows(ADNException.class, () -> DetectorMutantes.isMutant(dna));
     String mensajeEsperado = "La secuencia de ADN contiene caracteres no validos";
@@ -62,57 +62,51 @@ public class DetectorMutantesTest {
   }
 
   @Test
-  public void test07_Mutante_UnaVerticalUnaDiagonalPpal() throws ADNException {
+  public void test09_Mutante_UnaVerticalUnaDiagonalPpal() throws ADNException {
     String[] dna = {"TGACA", "CTTAG", "ACTAG", "ACTTG", "CAATG"};
     Assertions.assertTrue(DetectorMutantes.isMutant(dna));
   }
 
   @Test
-  public void test08_Mutante_UnaVerticalUnaDiagonalNoPpal() throws ADNException {
+  public void test10_Mutante_UnaVerticalUnaDiagonalNoPpal() throws ADNException {
     String[] dna = {"CGACA", "CTGAG", "TCTGG", "ACTAG", "CAATG"};
     Assertions.assertTrue(DetectorMutantes.isMutant(dna));
   }
 
   @Test
-  public void test09_Mutante_UnaDiagonalNoPpalUnaDiagonalInvertida() throws ADNException {
+  public void test11_Mutante_UnaDiagonalNoPpalUnaDiagonalInvertida() throws ADNException {
     String[] dna = {"CGACA", "CTGAT", "TCAGC", "AATAG", "CAATG"};
     Assertions.assertTrue(DetectorMutantes.isMutant(dna));
   }
 
   @Test
-  public void test10_Mutante_UnaDiagonalVertiicalCasi() throws ADNException {
+  public void test12_NoMutante_UnaDiagonalVertiicalCasi() throws ADNException {
     String[] dna = {"CTGCA", "CGAAT", "CCAGC", "AATAG", "CAATT"};
     Assertions.assertFalse(DetectorMutantes.isMutant(dna));
   }
 
   @Test
-  public void test11_NoMutante_EjemploChallenge() throws ADNException {
+  public void test13_NoMutante_EjemploChallenge() throws ADNException {
     String[] dna = {"ATGCGA", "CAGTGC", "TTATTT", "AGACGG", "GCGTCA", "TCACTG"};
     Assertions.assertFalse(DetectorMutantes.isMutant(dna));
   }
 
   @Test
-  public void test12_Mutante_EjemploChallenge() throws ADNException {
+  public void test14_Mutante_EjemploChallenge() throws ADNException {
     String[] dna = {"ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG"};
     Assertions.assertTrue(DetectorMutantes.isMutant(dna));
   }
 
   @Test
-  public void test13_Mutante_UnaDiagonalVertiicalCasi() throws ADNException {
+  public void test15_NoMutante_UnaDiagonalExtendida() throws ADNException {
     String[] dna = {"CTGCA", "CGAAT", "CCAGC", "AATAG", "AAATT"};
     Assertions.assertFalse(DetectorMutantes.isMutant(dna));
   }
 
   @Test
-  public void test14_Mutante_DobleDiagonal() throws ADNException {
+  public void test16_Mutante_DobleDiagonal() throws ADNException {
     String[] dna = {"ACGTACGT", "CGTACGTA", "TGCATTCA", "GTCATTCA", "ACGTACGT", "CGTACGTA", "TTCATGCA", "TTCAGTCA"};
     Assertions.assertTrue(DetectorMutantes.isMutant(dna));
   }
-
-
-
-
-
-
 
 }
