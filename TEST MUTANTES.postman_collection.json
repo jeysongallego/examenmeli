@@ -1,0 +1,521 @@
+{
+	"info": {
+		"_postman_id": "573b3b51-fa84-42e9-a4f5-4175a556e993",
+		"name": "TEST MUTANTES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TEST01-FILAS DIF COLUMNAS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dna\": [\r\n        \"ATGCGA\",\r\n        \"CAGTGC\",\r\n        \"TTATGT\",\r\n        \"AGAAGG\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://psysdqzaai.execute-api.us-east-2.amazonaws.com/test/mutant",
+					"protocol": "https",
+					"host": [
+						"psysdqzaai",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"test",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST02-LETRA MALA",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dna\": [\r\n        \"ATGC\",\r\n        \"CAGT\",\r\n        \"TTAT\",\r\n        \"AXAA\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://psysdqzaai.execute-api.us-east-2.amazonaws.com/test/mutant",
+					"protocol": "https",
+					"host": [
+						"psysdqzaai",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"test",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST03-NOMUTANT-1VERT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dna\": [\r\n        \"GTAC\",\r\n        \"CGAT\",\r\n        \"TTAT\",\r\n        \"AGAT\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://psysdqzaai.execute-api.us-east-2.amazonaws.com/test/mutant",
+					"protocol": "https",
+					"host": [
+						"psysdqzaai",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"test",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST04-MUTANTE-2VERT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dna\": [\r\n        \"GTACG\",\r\n        \"CGATG\",\r\n        \"TTATG\",\r\n        \"AGATG\",\r\n        \"CAATG\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://psysdqzaai.execute-api.us-east-2.amazonaws.com/test/mutant",
+					"protocol": "https",
+					"host": [
+						"psysdqzaai",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"test",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST05-NOMUTANT-PEQ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dna\": [\r\n        \"GGG\",\r\n        \"GGG\",\r\n        \"GGG\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://psysdqzaai.execute-api.us-east-2.amazonaws.com/test/mutant",
+					"protocol": "https",
+					"host": [
+						"psysdqzaai",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"test",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST06-MUTANT-2HORIZ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dna\": [\r\n        \"GTACG\",\r\n        \"CGGGG\",\r\n        \"GGGGC\",\r\n        \"AGATG\",\r\n        \"CAATG\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://psysdqzaai.execute-api.us-east-2.amazonaws.com/test/mutant",
+					"protocol": "https",
+					"host": [
+						"psysdqzaai",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"test",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST07-MUTANT-1HOR-1VERT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dna\": [\r\n        \"GTACA\",\r\n        \"CGGGG\",\r\n        \"ACCAG\",\r\n        \"ACTTG\",\r\n        \"CAATG\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://psysdqzaai.execute-api.us-east-2.amazonaws.com/test/mutant",
+					"protocol": "https",
+					"host": [
+						"psysdqzaai",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"test",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST08-NOMUTANT-LETMALFIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dna\": [\r\n        \"GTACAG\",\r\n        \"CGGGGT\",\r\n        \"ACCAGA\",\r\n        \"ACTTGC\",\r\n        \"CAATGA\",\r\n        \"CAATGK\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://psysdqzaai.execute-api.us-east-2.amazonaws.com/test/mutant",
+					"protocol": "https",
+					"host": [
+						"psysdqzaai",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"test",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST09-MUTANT-1VERT-1DIAG",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dna\": [\r\n        \"TGACA\",\r\n        \"CTTAG\",\r\n        \"ACTAG\",\r\n        \"ACTTG\",\r\n        \"CAATG\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://psysdqzaai.execute-api.us-east-2.amazonaws.com/test/mutant",
+					"protocol": "https",
+					"host": [
+						"psysdqzaai",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"test",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST10-MUTANT-1VET-1DIAG2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dna\": [\r\n        \"CGACA\",\r\n        \"CTGAG\",\r\n        \"TCTGG\",\r\n        \"ACTAG\",\r\n        \"CAATG\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://psysdqzaai.execute-api.us-east-2.amazonaws.com/test/mutant",
+					"protocol": "https",
+					"host": [
+						"psysdqzaai",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"test",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST11-MUTANT-1DIAG-1OBLIC",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dna\": [\r\n        \"CGACA\",\r\n        \"CTGAT\",\r\n        \"TCAGC\",\r\n        \"AATAG\",\r\n        \"CAATG\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://psysdqzaai.execute-api.us-east-2.amazonaws.com/test/mutant",
+					"protocol": "https",
+					"host": [
+						"psysdqzaai",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"test",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST12-NM-1OBLIC-VERTCASI",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dna\": [\r\n        \"CTGCA\",\r\n        \"CGAAT\",\r\n        \"CCAGC\",\r\n        \"AATAG\",\r\n        \"CAATT\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://psysdqzaai.execute-api.us-east-2.amazonaws.com/test/mutant",
+					"protocol": "https",
+					"host": [
+						"psysdqzaai",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"test",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST13-NM-EJ-CHALLENGE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dna\": [\r\n        \"ATGCGA\",\r\n        \"CAGTGC\",\r\n        \"TTATTT\",\r\n        \"AGACGG\",\r\n        \"GCGTCA\",\r\n        \"TCACTG\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://psysdqzaai.execute-api.us-east-2.amazonaws.com/test/mutant",
+					"protocol": "https",
+					"host": [
+						"psysdqzaai",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"test",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST14-MUTANTE-CHALLENGE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dna\": [\r\n        \"ATGCGA\",\r\n        \"CAGTGC\",\r\n        \"TTATGT\",\r\n        \"AGAAGG\",\r\n        \"CCCCTA\",\r\n        \"TCACTG\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://psysdqzaai.execute-api.us-east-2.amazonaws.com/test/mutant",
+					"protocol": "https",
+					"host": [
+						"psysdqzaai",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"test",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST15-NM-1OBLICEXTEND",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dna\": [\r\n        \"CTGCA\",\r\n        \"CGAAT\",\r\n        \"CCAGC\",\r\n        \"AATAG\",\r\n        \"AAATT\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://psysdqzaai.execute-api.us-east-2.amazonaws.com/test/mutant",
+					"protocol": "https",
+					"host": [
+						"psysdqzaai",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"test",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST16-MUTANTE-DOBLEOBLICUA",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dna\": [\r\n        \"ACGTACGT\",\r\n        \"CGTACGTA\",\r\n        \"TGCATTCA\",\r\n        \"GTCATTCA\",\r\n        \"ACGTACGT\",\r\n        \"CGTACGTA\",\r\n        \"TTCATGCA\",\r\n        \"TTCAGTCA\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://psysdqzaai.execute-api.us-east-2.amazonaws.com/test/mutant",
+					"protocol": "https",
+					"host": [
+						"psysdqzaai",
+						"execute-api",
+						"us-east-2",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"test",
+						"mutant"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
