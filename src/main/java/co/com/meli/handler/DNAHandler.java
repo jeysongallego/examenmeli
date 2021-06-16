@@ -1,5 +1,6 @@
 package co.com.meli.handler;
 
+import co.com.meli.db.DynamoOperations;
 import co.com.meli.mutantes.ADNException;
 import co.com.meli.mutantes.DetectorMutantes;
 import com.amazonaws.services.lambda.runtime.Context;
@@ -11,6 +12,7 @@ public class DNAHandler implements RequestHandler<Request, String> {
   public String handleRequest(Request request, Context context) {
     try {
       boolean isMutant = DetectorMutantes.isMutant(request.getDna());
+      new DynamoOperations().insertADN(request.getDna(), isMutant);
       if (isMutant) {
         return "true";
       } else {
