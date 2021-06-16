@@ -8,11 +8,23 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 public class DNAHandler implements RequestHandler<Request, String> {
 
+  private DynamoOperations dbManager;
+
+  public DNAHandler() {
+  }
+
+  public DNAHandler(DynamoOperations dbManager) {
+    this.dbManager = dbManager;
+  }
+
   @Override
   public String handleRequest(Request request, Context context) {
+    if(this.dbManager == null) {
+      this.dbManager = new DynamoOperations();
+    }
     try {
       boolean isMutant = DetectorMutantes.isMutant(request.getDna());
-      new DynamoOperations().insertADN(request.getDna(), isMutant);
+      dbManager.insertADN(request.getDna(), isMutant);
       if (isMutant) {
         return "true";
       } else {

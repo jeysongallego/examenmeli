@@ -1,6 +1,5 @@
 package co.com.meli.db;
 
-import co.com.meli.handler.ResponseStats;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
@@ -37,24 +36,11 @@ public class DynamoOperations {
     itemADN.with("id", new Random().nextInt());
     itemADN.with("dna", Arrays.asList(dna));
     itemADN.with("mutante", mutante ? 1 : 0);
-    tabla.putItem(itemADN);
+    saveData(tabla, itemADN);
   }
 
-  /**
-   * Consulta la estadistica de mutantes y no mutantes
-   * y lo retorna e un objeto tipo ResponseStats
-   *
-   * @return Estadisticas almacendas en la BD.
-   */
-  public ResponseStats consultarStats() {
-    ResponseStats stats = new ResponseStats();
-    Index index = this.dynamoDb.getTable(TABLA_ADN).getIndex(IDX_MUTANTES);
-    int mutantes = getElementosIndex(index, 1);
-    int noMutantes = getElementosIndex(index, 0);
-    stats.setCount_mutant_dn(mutantes);
-    stats.setCount_human_dna(mutantes + noMutantes);
-    stats.setRatio(Math.round((mutantes * 100.0) / (mutantes + noMutantes))/100.0);
-    return stats;
+  public void saveData(Table tabla, Item item) {
+    tabla.putItem(item);
   }
 
   /**
@@ -62,11 +48,11 @@ public class DynamoOperations {
    * mutante = parmetro; donde parametro es 1 o 0, basciamente cuenta la cantidad
    * de mutantes o no muntantes con el indice.
    *
-   * @param index   Index que tiene la estadistica
    * @param mutante 1 si es para buscar mutantes 0 no mutantes
    * @return Cantidad de mutantes o de no mutantes.
    */
-  private int getElementosIndex(Index index, int mutante) {
+  public int getECantidadADNs(int mutante) {
+    Index index = this.dynamoDb.getTable(TABLA_ADN).getIndex(IDX_MUTANTES);
     QuerySpec query = new QuerySpec();
     query.withScanIndexForward(false);
     query.withKeyConditionExpression("mutante = :v_mutante");
@@ -74,7 +60,7 @@ public class DynamoOperations {
     query.withValueMap(new ValueMap().withInt(":v_mutante", mutante));
     ItemCollection<QueryOutcome> result = index.query(query);
     for (Page<Item, QueryOutcome> page : result.pages()) {
-      //Normalmente deberia funcionar getAccumulatedItemCount, pero como no se usa esta funcion.
+      //Normalmente deberia funcionar getAccumulatedItemCount, pero como no se usa esta funciona.
       return page.getLowLevelResult().getQueryResult().getCount();
     }
     //Esta seria la respuesta normalmente, pero NO FUNCIONA !!!

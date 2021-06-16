@@ -5,7 +5,7 @@ Para ejecutar el API REST y detectar si una secuencia de ADN es de un mutante, s
 
 https://psysdqzaai.execute-api.us-east-2.amazonaws.com/test/mutant
 
-La petición se realiza sin ninun parametro se seguridad, en el cuerpo del mensaje se debe enviar un Json con la siguiente estructura.
+La petición se realiza sin ninun parametro de seguridad, en el cuerpo del mensaje se debe enviar un Json con la siguiente estructura.
 ```sh
 {"dna": ["GTACG","CGATG","TTATG","AGATG","CAATG"]}
 ```
@@ -15,7 +15,7 @@ https://github.com/jeysongallego/examenmeli/blob/main/TEST%20MUTANTES.postman_co
 
 Todas las peticiones de cadenas ADN válidas son almacenada en una BD DynamoBD, con el respectivo atributo si es o no mutante.
 
-Se puede ver una estadistica de la cantidad de ADNs mutantes vs total de ADN invocando un servicio GET en la siguiente url :
+Se puede ver una estadistica de la cantidad de ADNs mutantes vs total de ADNs, invocando un servicio GET en la siguiente url :
 
 https://psysdqzaai.execute-api.us-east-2.amazonaws.com/test/stats
 
